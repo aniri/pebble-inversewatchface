@@ -4,12 +4,12 @@
         ""
     ],
     "companyName": "aniri.ro",
-    "longName": "InverseWatchFace",
+    "longName": "InvertFace",
     "projectType": "native",
     "resources": {
         "media": []
     },
-    "shortName": "InverseWatchFace",
+    "shortName": "InvertFace",
     "uuid": "0073d99d-7a84-41d2-aeb8-78e52f23be55",
     "versionCode": 1,
     "versionLabel": "1.0",
