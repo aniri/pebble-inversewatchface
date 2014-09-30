@@ -40,7 +40,7 @@ void window_load(Window *window)
 	
 	// s_textlayer_time
 	s_textlayer_time = text_layer_create(GRect(10, 30, 125, 50));
-	text_layer_set_text(s_textlayer_time, "00:00");
+	text_layer_set_text(s_textlayer_time, "     ");
 	text_layer_set_text_alignment(s_textlayer_time, GTextAlignmentCenter);
 	text_layer_set_font(s_textlayer_time, time_font);
 	layer_add_child(window_get_root_layer(window), (Layer *)s_textlayer_time);
@@ -95,6 +95,9 @@ void bluetooth_handler(bool connected)
  
 void init()
 {
+	// subscribe to tick timer
+	tick_timer_service_subscribe(MINUTE_UNIT, (TickHandler)tick_handler);
+	
 	//Create the app elements here!
 	g_window = window_create();
 	window_set_window_handlers(g_window, (WindowHandlers) {
@@ -102,9 +105,7 @@ void init()
 		.unload = window_unload,
 	});
 
-	// subscribe to tick timer
-	tick_timer_service_subscribe(MINUTE_UNIT, (TickHandler)tick_handler);
-	// subscribe t obluetooth service for checking connection
+	// subscribe to bluetooth service for checking connection
 	bluetooth_connection_service_subscribe((BluetoothConnectionHandler)bluetooth_handler);
 
 	window_stack_push(g_window, true);

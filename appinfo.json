@@ -12,7 +12,7 @@
     "shortName": "InvertFace",
     "uuid": "0073d99d-7a84-41d2-aeb8-78e52f23be55",
     "versionCode": 1,
-    "versionLabel": "1.0",
+    "versionLabel": "1.1",
     "watchapp": {
         "watchface": true
     }
